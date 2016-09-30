@@ -4,23 +4,239 @@
   
     
     <entry>
-      <title><![CDATA[My New Post]]></title>
-      <url>https://sunsmeil.github.io/2016/09/29/My-New-Post/</url>
-      <content type="html"></content>
+      <title><![CDATA[高程三（面向对象）]]></title>
+      <url>https://sunsmeil.github.io/2016/09/30/%E9%AB%98%E7%A8%8B%E4%B8%89%EF%BC%88%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%EF%BC%89/</url>
+      <content type="html"><![CDATA[<p>高程三 各种模式<br><a id="more"></a></p>
+<h4 id="6-1-理解对象"><a href="#6-1-理解对象" class="headerlink" title="6.1 理解对象"></a>6.1 理解对象</h4><h5 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h5><ol>
+<li>创建实例<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var person = new Object();</div><div class="line"></div><div class="line">person.name = &quot;mable&quot;; </div><div class="line"></div><div class="line">person,age = &quot;23&quot;;</div><div class="line"></div><div class="line">person.sayName = function()&#123;</div><div class="line">    alert(this.name);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>2.也可以这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var person = &#123; </div><div class="line"></div><div class="line">    name:&apos;mable&apos;,</div><div class="line">    age:&apos;21&apos;,</div><div class="line">    </div><div class="line">    sayName:function()&#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><ol>
+<li>数据属性</li>
+</ol>
+<ul>
+<li>Configurable 能否通过delete删除属性重新定义 <strong>默认true</strong></li>
+<li>Enumerable 能否通过for-in循环返回 <strong>默认true</strong></li>
+<li>Writable 能否修改值 <strong>默认true</strong></li>
+<li>Value  属性的数据值 <strong>默认undefined</strong></li>
+</ul>
+<ol>
+<li>访问器属性</li>
+</ol>
+<ul>
+<li>Configurable 能否通过delete删除属性重新定义 <strong>默认true</strong></li>
+<li>Enumerable 能否通过for-in循环返回 <strong>默认true</strong></li>
+<li>Get 读取属性时调用的函数 <strong>默认undefined</strong></li>
+<li>Set 写入属性时调用的函数 <strong>默认undefined</strong></li>
+</ul>
+<blockquote>
+<p>访问器属性不能直接定义，必须使用object.defineProperty()定义。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var book = &#123;</div><div class="line">   _year : 2012,</div><div class="line">   edition : 1</div><div class="line">&#125;;</div><div class="line"></div><div class="line">Object.defineProperty(book,&quot;year&quot;,&#123;</div><div class="line">   get : function()&#123;</div><div class="line">       return this._year;</div><div class="line">   &#125;,</div><div class="line">   set : function(newValue)&#123;</div><div class="line">       </div><div class="line">       if(newValue &gt; 2012) &#123;</div><div class="line">           this._year = newValue;</div><div class="line">           this.edition += newValue - 2003;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">book.year = 2005;</div><div class="line">alert(book.edition); //2</div></pre></td></tr></table></figure>
+<ol>
+<li>定义多个属性</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">var book = &#123;&#125;;</div><div class="line"></div><div class="line">object.defineProperties(book,&#123;</div><div class="line">   _year:&#123;</div><div class="line">       value:2004</div><div class="line">   &#125;,</div><div class="line">   </div><div class="line">   edition:&#123;</div><div class="line">       value:1</div><div class="line">   &#125;,</div><div class="line">   </div><div class="line">   year:&#123;</div><div class="line">       get:function()&#123;</div><div class="line">           return this._year;</div><div class="line">       &#125;,</div><div class="line">       </div><div class="line">       set:function(newValue)&#123;</div><div class="line">           if(newValue &gt; 2004)&#123;</div><div class="line">               this._year = newValue;</div><div class="line">               this.edition += newValue - 2004;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">   &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
+<li>读取属性的特性<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//数据属性</div><div class="line">var descriptor = Object.getOwnPropartyDescriptor(book,&quot;_year&quot;);</div><div class="line">alert(descriptor.value);</div><div class="line">alert(descriptor.confi gurable); //false</div><div class="line"></div><div class="line">alert(typeof descriptor.get); //undefined</div><div class="line">//访问器属性</div><div class="line">var descriptor = Object.getOwnPropartyDescriptor(book,&quot;year&quot;);</div><div class="line">alert(descriptor.value);</div><div class="line">alert(descriptor.enumerable);</div><div class="line">alert(typeof descriptor.get);//function</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="6-2-创建对象"><a href="#6-2-创建对象" class="headerlink" title="6.2 创建对象"></a>6.2 创建对象</h4><ol>
+<li>工厂模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function createPerson(name,age,job)&#123;</div><div class="line">    var o = new Object();</div><div class="line">    o.name = name;</div><div class="line">    o.age = age;</div><div class="line">    o.job = job;</div><div class="line">    o.sayName = function()&#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;;</div><div class="line">    return o;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var person1 = creatPerson(&quot;mable&quot;,23,&quot;it&quot;);</div><div class="line">var person2 = creatPerson(&quot;hahah&quot;,23,&quot;sdd&quot;);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>没有解决对象识别的问题（及怎样知道一个对象的类型）</p>
+</blockquote>
+<ol>
+<li>构造函数模式</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Person(name,age,job)&#123;</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">    this.job = job;</div><div class="line">    this.sayName = function()&#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var person1 = new Person (&quot;mable&quot;,23,&quot;it&quot;);</div><div class="line">var person2 = new Person(&quot;hahah&quot;,23,&quot;sdd&quot;);</div></pre></td></tr></table></figure>
+<blockquote>
+<p>1.没有显示地创建对象2.直接将属性和方法赋给this对象3.没有return语句</p>
+</blockquote>
+<p>3.原型模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">function Person()&#123;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Person.prototype.name = &quot;haha&quot;;</div><div class="line">Person.prototype.age = 12;</div><div class="line">Person.prototype.job = &quot;111111&quot;;</div><div class="line">Person.prototype.sayName = function()&#123;</div><div class="line">    alert(this.name);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var person1 = new Person();</div><div class="line">person1.sayName(); //&quot;haha&quot;</div><div class="line"></div><div class="line">var person2 = new Person();</div><div class="line">person2.sayName(); //haha</div><div class="line"></div><div class="line">alert(person1.sayName == person2.sayName); //true</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>isPrototypeOf 内部是否有指向的指针</p>
+<p>getPrototypeOf 返回内部属性值</p>
+<p>hasOwnProperty() 检测实例属性  来自实例 来自原型</p>
+</blockquote>
+<p>4.动态原型模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">function Person(name.age,job)&#123;</div><div class="line">    //属性</div><div class="line">    this.name = name;</div><div class="line">    this.age = age;</div><div class="line">    this.job = job;</div><div class="line">    //方法</div><div class="line">    if(typeof this.sayName != &quot;function&quot;)&#123;</div><div class="line">        </div><div class="line">        Person.prototype.sayName = function()&#123;</div><div class="line">            alert(this.name);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var friend = new Person(&quot;haha&quot;,29,&quot;sdhj&quot;);</div><div class="line">friend.sayName();</div></pre></td></tr></table></figure></p>
+<p>5.寄生构造函数模式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Person(name,age,job)&#123;</div><div class="line">    var o = new Object();</div><div class="line">    o.name = name;</div><div class="line">    o.age =age;</div><div class="line">    o.job = job;</div><div class="line">    o.sayName = function()&#123;</div><div class="line">        alert(this.name);</div><div class="line">    &#125;;</div><div class="line">    return o;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var friend = new Person(&quot;haha&quot;,12,&quot;sssss&quot;);</div><div class="line">frinend.sayName(); //&quot;haha&quot;</div></pre></td></tr></table></figure></p>
+<ol>
+<li>稳妥构造函数模式<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function Person(name,age,job)&#123;</div><div class="line">    //创建返回的对象</div><div class="line">    var o = new Object();</div><div class="line">    //可以在这里定义私有变量和函数</div><div class="line">    </div><div class="line">    //添加方法</div><div class="line">    o.sayName = function()&#123;</div><div class="line">        alert(name)</div><div class="line">    &#125;;</div><div class="line">    </div><div class="line">    //返回对象</div><div class="line">    return o;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="6-3-原型链"><a href="#6-3-原型链" class="headerlink" title="6.3 原型链"></a>6.3 原型链</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function SuperType()&#123;</div><div class="line">    this.property = true;</div><div class="line">&#125;</div><div class="line"></div><div class="line">SuperType.prototype.getSuperValue = function()&#123;</div><div class="line">    return this.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function SubType()&#123;</div><div class="line">    this.subproperty = false;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//继承了 SuperType</div><div class="line">SubType.prototype = new SuperType();</div><div class="line"></div><div class="line">SubType.prototype.getSubValue = function()&#123;</div><div class="line">    return this.subproperty;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">var instance = new SubType();</div><div class="line">alert(instance.getSuperValue()); //true</div></pre></td></tr></table></figure>]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[Hello World]]></title>
-      <url>https://sunsmeil.github.io/2016/09/29/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+      <title><![CDATA[高程三深入（对象）]]></title>
+      <url>https://sunsmeil.github.io/2016/09/30/%E9%AB%98%E7%A8%8B%E4%B8%89%E6%B7%B1%E5%85%A5%EF%BC%88%E5%AF%B9%E8%B1%A1%EF%BC%89/</url>
+      <content type="html"><![CDATA[<p>高程三 object,function,array<br><a id="more"></a></p>
+<h3 id="array"><a href="#array" class="headerlink" title="array"></a>array</h3><ul>
+<li><h4 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h4></li>
+</ul>
+<ol>
+<li><p>new操作符 创建</p>
+<p>  <code>var mable = new Array();</code></p>
+<p> //可以规定数组长度</p>
+<p> <code>var mable = new Array(20);</code></p>
+<p> //可以初始几个值</p>
+<p> <code>var mable = new Array(&quot;haha&quot;,&quot;sss&quot;,&quot;sss&quot;);</code></p>
+</li>
+</ol>
+<pre><code>*另：new可以省略*
+
+` var mable = Array();
+
+//可以规定数组长度
+
+var mable = Array(20);
+
+//可以初始几个值
+
+var mable = Array(&quot;haha&quot;,&quot;sss&quot;,&quot;sss&quot;);
+
+结果相同
+</code></pre><ol>
+<li>数组字面量表示法</li>
+</ol>
+<pre><code>//空数组
+var person = []
+//初始几个值
+var person = [&quot;ss&quot;,&quot;sss&quot;]
+//不要这样 ie8以下会创建3个  其他 2个
+var person = [1,2,]
+`
+</code></pre><ul>
+<li><h4 id="访问"><a href="#访问" class="headerlink" title="访问"></a>访问</h4></li>
+</ul>
+<ol>
+<li><p>基于0的索引访问</p>
+<p> <code>person[0]</code></p>
+</li>
+</ol>
+<p><em>注：可通过设置length移除最后一项</em></p>
+<ul>
+<li><h4 id="检测数组"><a href="#检测数组" class="headerlink" title="检测数组"></a>检测数组</h4><p>  <code>Array.isArray(value)</code></p>
+</li>
+<li><h4 id="转换方法"><a href="#转换方法" class="headerlink" title="转换方法"></a>转换方法</h4><p>  1.toString valueOf</p>
+<p>  返回数组的字符串标示 已逗号相隔</p>
+<p>  2.toLocalString</p>
+<p>  返回结果相同 但调用方法不同</p>
+<p>  3.join可以改变不同的分割符</p>
+<p>  <em>注:数组中任意一项值为 null or undefined ,那么以上方法返回结果空字符串</em></p>
+</li>
+<li><h4 id="栈方法（后进先出）"><a href="#栈方法（后进先出）" class="headerlink" title="栈方法（后进先出）"></a>栈方法（后进先出）</h4><p> 1.push pop (添加 取得)</p>
+</li>
+<li><h4 id="队列方法（先进先出）"><a href="#队列方法（先进先出）" class="headerlink" title="队列方法（先进先出）"></a>队列方法（先进先出）</h4><p> 1.push shift<br>  <em>另有 unshift 同时使用pop可反方向模拟队列</em></p>
+</li>
+<li><h4 id="重排序"><a href="#重排序" class="headerlink" title="重排序"></a>重排序</h4><p> 1.reverse  反转数组顺序</p>
+<p> 2.sort<br>  默认升序 （由小到大）<br>  比较函数 接收两个参数</p>
+<p>  `<br>  function compare(v1,v2){</p>
+<pre><code>  if(v1 &lt; v2){
+      return -1;
+  } else if(v1 &gt; v2){
+      return 1;
+  }else{
+      return 0;
+  }
+}
+</code></pre><p>  `</p>
+<p>  <em>注：比较函数通过返回值影响排序</em></p>
+</li>
+<li><h4 id="操作方法"><a href="#操作方法" class="headerlink" title="操作方法"></a>操作方法</h4><p> 1.concat </p>
+<p>   1)添加数组 将数组放置末尾联结<br>   2)添加值  直接放在末尾即可</p>
+<p> 2.slice</p>
+<p>  1.可传 1~2个参数  1个参数 从此位置到结尾  2个参数 从第一个参数开始 到第二个参数结尾</p>
+<p>  <em>有负值时 用数组长度加上该值在判断  如结束小于开始空数组 如负数大于数组长度 返回所有数组</em></p>
+<p> 3.splice</p>
+<p>   1) 删除  splice(0,2)</p>
+<p>   2) 插入 splice(2,0,”ss”,”sss”)  //起始位置 要删除项数 要插入</p>
+<p>   3) 替换 splice(2,1,”ss”)</p>
+</li>
+<li><h4 id="位置方法"><a href="#位置方法" class="headerlink" title="位置方法"></a>位置方法</h4><ol>
+<li>indexOf(从头查找)</li>
+<li>lastIndexOf（从末尾查找）<br><em>找不到 返回-1 找到 返回位置索引</em></li>
+</ol>
+</li>
+<li><h4 id="迭代方法"><a href="#迭代方法" class="headerlink" title="迭代方法"></a>迭代方法</h4><p>1.every 和 some<br>查询数组项 满足某一条件 返回 true 或 false<br>区别  every每项都是true  结果为true</p>
+<pre><code>some 一项为true  结果为true
+</code></pre><p>2.filter 和map<br>返回结果组成数组<br>filter  指定返回的数组中 是否有某一项<br>map  每项都运行传人函数 返回结果数组</p>
+<p>3.forEach<br>  没有返回值 类似for</p>
+</li>
+<li><h4 id="缩小方法"><a href="#缩小方法" class="headerlink" title="缩小方法"></a>缩小方法</h4><ol>
+<li>reduce(从左向右)</li>
+<li>reduceRight(从右向左)</li>
+</ol>
+<p>`<br> reduce(function(prev,cur,index,array){</p>
+<pre><code>return prev + cur;
+</code></pre><p>  })<br>`</p>
+</li>
+</ul>
+<h3 id="object"><a href="#object" class="headerlink" title="object"></a>object</h3><ul>
+<li><h4 id="创建-1"><a href="#创建-1" class="headerlink" title="创建"></a>创建</h4></li>
+</ul>
+<ol>
+<li><p>new操作符 创建</p>
+<p> <code>var person = new Object();</code></p>
+</li>
+<li><p>对象字面量表示法</p>
+<p> <code>var person = {
+ name:&#39;ssss&#39;,
+ age:&#39;22&#39;
+ }</code></p>
+</li>
+</ol>
+<ul>
+<li><h4 id="访问-1"><a href="#访问-1" class="headerlink" title="访问"></a>访问</h4></li>
+</ul>
+<ol>
+<li><p>点表示法</p>
+<p> <code>person.name</code></p>
+</li>
+<li><p>方括号</p>
+<p> <code>person[&quot;name&quot;]</code></p>
+</li>
+</ol>
+<p><em>注：常用第一种  但第二种可用于变量  属性名包含错误语法字符时</em></p>
+<ul>
+<li><h4 id="应用环境（方括号）"><a href="#应用环境（方括号）" class="headerlink" title="应用环境（方括号）"></a>应用环境（方括号）</h4><p>  相同类型数据提交</p>
+</li>
+</ul>
+<h3 id="function"><a href="#function" class="headerlink" title="function"></a>function</h3><p>函数名是指针 函数是对象</p>
+<ul>
+<li><h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><ol>
+<li><code>function asd (n1,n2){}</code></li>
+<li><code>var s = function(n1,n2)</code></li>
+<li><code>var s = new Function (&quot;n1&quot;,&quot;n2&quot;,&quot;return n1+n2&quot;)</code>//不推荐</li>
+</ol>
+</li>
+<li><h4 id="没有重载"><a href="#没有重载" class="headerlink" title="没有重载"></a>没有重载</h4></li>
+<li><h4 id="函数声明与函数表达式"><a href="#函数声明与函数表达式" class="headerlink" title="函数声明与函数表达式"></a>函数声明与函数表达式</h4>函数声明 可以在它之前调用 函数表达式不可以<br><code>//没有问题
+alert(sun);
+function sun(){
+  return 1;
+}
+//报错
+alert(sun);
+var sun = function(){
+  return 1;
+}</code></li>
+<li><h4 id="内部属性"><a href="#内部属性" class="headerlink" title="内部属性"></a>内部属性</h4><ol>
+<li>arguments(保存函数参数)<br>arguments.callee 指向拥有这个arguments对象的函数</li>
+<li>this</li>
+</ol>
+</li>
+<li><h4 id="属性-方法"><a href="#属性-方法" class="headerlink" title="属性 方法"></a>属性 方法</h4><ol>
+<li>length 接收命名参数的个数</li>
+<li>prototype 保存所有实例方法</li>
+<li>apply 和 call 区别在于call明确传递每一个参数  可用来扩充作用域</li>
+</ol>
+</li>
+</ul>
 ]]></content>
     </entry>
     
