@@ -360,93 +360,12 @@
 
       
         
-          
-            <h1 id="用hexo-git-在window下搭建个人博客"><a href="#用hexo-git-在window下搭建个人博客" class="headerlink" title="用hexo git 在window下搭建个人博客"></a>用hexo git 在window下搭建个人博客</h1><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
-<li><p>node</p>
-<p> node安装：<a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" target="_blank" rel="external">http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html</a></p>
-<blockquote>
-<p>注意：安装在c盘之外的话 需要配置环境变量</p>
-</blockquote>
-</li>
-<li><p>git</p>
-<p> git安装：<a href="http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html" target="_blank" rel="external">http://jingyan.baidu.com/article/90895e0fb3495f64ed6b0b50.html</a></p>
-<blockquote>
-<p>下一步 下一步就好<br> 最好设置一下 全局username 和 name </p>
-</blockquote>
- <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name [username]</div><div class="line">git config --global user.email [email]</div></pre></td></tr></table></figure>
-</li>
-<li><p>github 账号</p>
-<ul>
-<li><p>注册一个github 账号。</p>
-<blockquote>
-<p>需要验证一下邮箱 如果是qq邮箱的话 有可能验证邮件被拦截 从拦截中取出就好</p>
-</blockquote>
-</li>
-<li><p>新建一个项目  </p>
-<blockquote>
-<p>项目命名<strong>必须</strong>为 githubname.github.io</p>
-</blockquote>
-</li>
-<li><p>获取项目链接地址 可以使用http 地址 例如</p>
-<blockquote>
-<p><a href="https://github.com/sunsmeil/sunsmeil.github.io.git" target="_blank" rel="external">https://github.com/sunsmeil/sunsmeil.github.io.git</a></p>
-</blockquote>
-</li>
-</ul>
-</li>
-</ol>
-<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><ol>
-<li><p>如果安装在c盘，可以直接在c盘创建一个博客的文件夹。然后在该文件夹中 右键打开 Git Bush Here</p>
-</li>
-<li><p>在此目录下运行 </p>
-</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo -g</div></pre></td></tr></table></figure>
-<blockquote>
-<p>安装hexo。 -g 为全局</p>
-</blockquote>
-<ol>
-<li>hexo默认支持markdown格式 及.md。 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>md打包编辑成html 且在本地运行  打开<strong>localhost:4000</strong> 及可看到博客效果</p>
-</blockquote>
-<ol>
-<li>重点 将本地内容上传 github</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
-<blockquote>
-<p>如果成功没有报错  会弹出对话框 输入用户名 密码</p>
-</blockquote>
-<p>可能遇到问题 ：</p>
-<ol>
-<li>运行完 没有报错 也没有反应<br> 解决：检查目录下有public 文件夹<br> 没有重新运行 hexo s</li>
-<li><p>改完上传没有变化<br> 运行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean //根目录下运行</div><div class="line">hexo s</div><div class="line">hexo d  //上传</div></pre></td></tr></table></figure>
-</li>
-<li><p>浏览器输入地址 yousitename.github.io<br>看到效果♪(^∇^*)</p>
-</li>
-</ol>
-<h3 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h3><blockquote>
-<p>推荐主题选择<br><a href="https://www.zhihu.com/question/24422335" target="_blank" rel="external">https://www.zhihu.com/question/24422335</a></p>
-</blockquote>
-<ol>
-<li><p>我用的是第一名的next</p>
-<p> 官方文档十分详尽（评论，主题，统计）</p>
-<p> <a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></p>
-</li>
-</ol>
-<p>这边头像链接如果选用 国内百度http 有可能看不到图片 </p>
-<blockquote>
-<p>推荐 Github 的头像 右键审查 复制链接即可</p>
-</blockquote>
-<h3 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo n &quot;article_name&quot; //新建文章</div><div class="line"></div><div class="line">hexo n page &quot;page_name&quot; //新建页面</div></pre></td></tr></table></figure>
-<p>首页只显示 文章简介<br>加入 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;!--more--&gt;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">title: 高程三深入（对象）</div><div class="line">date: 2016-09-30 10:50:44</div><div class="line">categories: js //分类</div><div class="line">tags: [js,高程三] //标签</div></pre></td></tr></table></figure>
-
-          
+          <h1 id="用hexo-git-在window下搭建个人博客"><a href="#用hexo-git-在window下搭建个人博客" class="headerlink" title="用hexo git 在window下搭建个人博客"></a>用hexo git 在window下搭建个人博客</h1>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/30/hexo博客搭建-window环境/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>

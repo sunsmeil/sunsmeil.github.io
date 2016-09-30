@@ -6,7 +6,8 @@
     <entry>
       <title><![CDATA[hexo博客搭建 window环境]]></title>
       <url>https://sunsmeil.github.io/2016/09/30/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA-window%E7%8E%AF%E5%A2%83/</url>
-      <content type="html"><![CDATA[<h1 id="用hexo-git-在window下搭建个人博客"><a href="#用hexo-git-在window下搭建个人博客" class="headerlink" title="用hexo git 在window下搭建个人博客"></a>用hexo git 在window下搭建个人博客</h1><h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
+      <content type="html"><![CDATA[<h1 id="用hexo-git-在window下搭建个人博客"><a href="#用hexo-git-在window下搭建个人博客" class="headerlink" title="用hexo git 在window下搭建个人博客"></a>用hexo git 在window下搭建个人博客</h1><a id="more"></a> 
+<h3 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h3><ol>
 <li><p>node</p>
 <p> node安装：<a href="http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html" target="_blank" rel="external">http://jingyan.baidu.com/article/b0b63dbfca599a4a483070a5.html</a></p>
 <blockquote>
