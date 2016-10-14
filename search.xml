@@ -4,6 +4,141 @@
   
     
     <entry>
+      <title><![CDATA[keycode]]></title>
+      <url>https://sunsmeil.github.io/2016/10/14/keycode/</url>
+      <content type="html"><![CDATA[<p>常用 回车（13） 空格（32） up(38) down(40)<br><a id="more"></a></p>
+<ul>
+<li>keycode    8 = BackSpace 回格</li>
+<li>keycode    9 = Tab</li>
+<li>keycode   12 = Clear</li>
+<li>keycode   13 = Enter 回车</li>
+<li>keycode   16 = Shift_L</li>
+<li>keycode   17 = Control_L</li>
+<li>keycode   18 = Alt_L</li>
+<li>keycode   19 = Pause</li>
+<li>keycode   20 = Caps_Lock</li>
+<li>keycode   27 = Escape</li>
+<li>keycode   32 = space</li>
+<li>keycode   33 = Prior</li>
+<li>keycode   34 = Next</li>
+<li>keycode   35 = End</li>
+<li>keycode   36 = Home</li>
+<li>keycode   37 = Left</li>
+<li>keycode   38 = Up</li>
+<li>keycode   39 = Right</li>
+<li>keycode   40 = Down</li>
+<li>keycode   41 = Select</li>
+<li>keycode   42 = Print</li>
+<li>keycode   43 = Execute</li>
+<li>keycode   45 = Insert</li>
+<li>keycode   46 = Delete</li>
+<li>keycode   47 = Help</li>
+<li>keycode   48 = 0 equal braceright</li>
+<li>keycode   49 = 1 exclam onesuperior</li>
+<li>keycode   50 = 2 quotedbl twosuperior</li>
+<li>keycode   51 = 3 section threesuperior</li>
+<li>keycode   52 = 4 dollar</li>
+<li>keycode   53 = 5 percent</li>
+<li>keycode   54 = 6 ampersand</li>
+<li>keycode   55 = 7 slash braceleft</li>
+<li>keycode   56 = 8 parenleft bracketleft</li>
+<li>keycode   57 = 9 parenright bracketright</li>
+<li>keycode   65 = a A</li>
+<li>keycode   66 = b B</li>
+<li>keycode   67 = c C</li>
+<li>keycode   68 = d D</li>
+<li>keycode   69 = e E EuroSign</li>
+<li>keycode   70 = f F</li>
+<li>keycode   71 = g G</li>
+<li>keycode   72 = h H</li>
+<li>keycode   73 = i I</li>
+<li>keycode   74 = j J</li>
+<li>keycode   75 = k K</li>
+<li>keycode   76 = l L</li>
+<li>keycode   77 = m M mu</li>
+<li>keycode   78 = n N</li>
+<li>keycode   79 = o O</li>
+<li>keycode   80 = p P</li>
+<li>keycode   81 = q Q at</li>
+<li>keycode   82 = r R</li>
+<li>keycode   83 = s S</li>
+<li>keycode   84 = t T</li>
+<li>keycode   85 = u U</li>
+<li>keycode   86 = v V</li>
+<li>keycode   87 = w W</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[IE兼容性 积累]]></title>
+      <url>https://sunsmeil.github.io/2016/10/14/IE%E5%85%BC%E5%AE%B9%E6%80%A7-%E7%A7%AF%E7%B4%AF/</url>
+      <content type="html"><![CDATA[<p>主要针对IE8以下兼容性 积累<br>↖(^ω^)↗<br><a id="more"></a></p>
+<h3 id="rgba-兼容IE8"><a href="#rgba-兼容IE8" class="headerlink" title="rgba 兼容IE8"></a>rgba 兼容IE8</h3><p><a href="http://www.tuicool.com/articles/juiEFrb" target="_blank" rel="external">http://www.tuicool.com/articles/juiEFrb</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);</div></pre></td></tr></table></figure>
+<p><img src="http://img2.tuicool.com/iEvEVr.png!web" alt="image"></p>
+<blockquote>
+<p>为便于复制 ( <em> ^ __ ^ </em> ) </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>透明度</th>
+<th>IE filter值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>19</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>33</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>4C</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>66</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>7F</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>99</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>C8</td>
+</tr>
+<tr>
+<td>0.9</td>
+<td>E5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opacity-兼容ie8"><a href="#opacity-兼容ie8" class="headerlink" title="opacity 兼容ie8"></a>opacity 兼容ie8</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);</div></pre></td></tr></table></figure>
+<h3 id="background-cover-兼容IE8"><a href="#background-cover-兼容IE8" class="headerlink" title="background-cover 兼容IE8"></a>background-cover 兼容IE8</h3><p>背景图两边模糊<br>background 加center 设背景颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background: url(../img/bj.jpg) no-repeat #333c41 center;</div></pre></td></tr></table></figure>
+<h3 id="position-默认及兼容-8以下（不包括8）"><a href="#position-默认及兼容-8以下（不包括8）" class="headerlink" title="position 默认及兼容 8以下（不包括8）"></a>position 默认及兼容 8以下（不包括8）</h3><ul>
+<li>position 默认值 static</li>
+<li><p>position  inherit</p>
+<p><a href="http://w3help.org/zh-cn/causes/RA8001" target="_blank" rel="external">http://w3help.org/zh-cn/causes/RA8001</a></p>
+</li>
+</ul>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[前端面试题]]></title>
       <url>https://sunsmeil.github.io/2016/10/13/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E9%A2%98/</url>
       <content type="html"><![CDATA[<p>基础css html js<br><a id="more"></a></p>

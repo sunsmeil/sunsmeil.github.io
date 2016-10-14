@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="前端,面试," />
+  <meta name="keywords" content="IE,兼容,工作,积累," />
 
 
 
@@ -84,16 +84,18 @@
 
 
 
-<meta name="description" content="基础css html js">
+<meta name="description" content="主要针对IE8以下兼容性 积累↖(^ω^)↗">
 <meta property="og:type" content="article">
-<meta property="og:title" content="前端面试题">
-<meta property="og:url" content="https://sunsmeil.github.io/2016/10/13/前端面试题/index.html">
+<meta property="og:title" content="IE兼容性 积累">
+<meta property="og:url" content="https://sunsmeil.github.io/2016/10/14/IE兼容性-积累/index.html">
 <meta property="og:site_name" content="xuzhaoyang的博客">
-<meta property="og:description" content="基础css html js">
-<meta property="og:updated_time" content="2016-10-13T06:42:21.290Z">
+<meta property="og:description" content="主要针对IE8以下兼容性 积累↖(^ω^)↗">
+<meta property="og:image" content="http://img2.tuicool.com/iEvEVr.png!web">
+<meta property="og:updated_time" content="2016-10-14T03:35:46.115Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="前端面试题">
-<meta name="twitter:description" content="基础css html js">
+<meta name="twitter:title" content="IE兼容性 积累">
+<meta name="twitter:description" content="主要针对IE8以下兼容性 积累↖(^ω^)↗">
+<meta name="twitter:image" content="http://img2.tuicool.com/iEvEVr.png!web">
 
 
 
@@ -114,9 +116,9 @@
 
 
 
-  <link rel="canonical" href="https://sunsmeil.github.io/2016/10/13/前端面试题/"/>
+  <link rel="canonical" href="https://sunsmeil.github.io/2016/10/14/IE兼容性-积累/"/>
 
-  <title> 前端面试题 | xuzhaoyang的博客 </title>
+  <title> IE兼容性 积累 | xuzhaoyang的博客 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -289,7 +291,7 @@
             
             
               
-                前端面试题
+                IE兼容性 积累
               
             
           </h1>
@@ -301,19 +303,38 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-13T14:32:31+08:00" content="2016-10-13">
-              2016-10-13
+            <time itemprop="dateCreated" datetime="2016-10-14T11:33:28+08:00" content="2016-10-14">
+              2016-10-14
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工作积累/" itemprop="url" rel="index">
+                    <span itemprop="name">工作积累</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/10/13/前端面试题/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/13/前端面试题/" itemprop="commentsCount"></span>
+                <a href="/2016/10/14/IE兼容性-积累/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/10/14/IE兼容性-积累/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -336,84 +357,66 @@
       
 
       
-        <p>基础css html js<br><a id="more"></a></p>
-<h4 id="HTML-amp-CSS"><a href="#HTML-amp-CSS" class="headerlink" title="HTML&amp;CSS"></a>HTML&amp;CSS</h4><p><strong>1. 盒子模型</strong></p>
-<ul>
-<li>包含 内容 内边距（padding） 边框（border）外边距（margin）。</li>
-</ul>
-<p><strong>2. 常用的display属性</strong></p>
-<ul>
-<li>none  隐藏</li>
-<li>block 去掉隐藏 块级</li>
-<li>inline-block 内联块级</li>
-<li>inline 内联元素</li>
-<li>table 块级表格</li>
-<li>inline-table 内联表格</li>
-<li>list-item 列表</li>
-</ul>
-<p><strong>3. 什么是清除浮动？如何清除</strong></p>
-<ul>
-<li>元素采用float布局时 会脱离文本流  需要在下面清除浮动</li>
-<li>clear：both 进行清除</li>
-<li>overflow：auto 父级添加</li>
-<li>伪类 <figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    clear:both;</div><div class="line">    content:&apos;.&apos;;</div><div class="line">    display:block;</div><div class="line">    width: 0;</div><div class="line">    height: 0;</div><div class="line">    visibility:hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>4. position</strong></p>
-<ul>
-<li>position:relative  相对</li>
-<li>position:absolute  绝对 相对第一个static定位以外定位</li>
-<li>position:fixed  绝对 相对浏览器</li>
-<li>static  默认</li>
-<li>inherit 继承父元素</li>
-</ul>
-<p><strong>5. 垂直居中</strong></p>
-<ul>
-<li>height 加 line-height 配合</li>
-<li>position 配合 top50%  translateY(-50%)</li>
-<li>position 配合 top50% margin-top 负值</li>
-<li>在 content 元素外插入一个 div。设置此 div height:50%; margin-bottom:-contentheight;。<br>content 清除浮动，并显示在中间。</li>
-<li><figure class="highlight plain"><figcaption><span>&#123;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">    position: absolute;</div><div class="line">    top: 0;</div><div class="line">    bottom: 0;</div><div class="line">    left: 0;</div><div class="line">    right: 0;</div><div class="line">    margin: auto;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p><strong>6.flex</strong></p>
-<p>display:flex (里面的clear失效)</p>
-<p>属性</p>
-<ul>
-<li>flex-basis  第一个盒子的初始长度的选择<br>div:nth-of-type(1) {flex-basis: 80px;}</li>
-<li>flex-direction<br>相反顺序</li>
-<li>flex-flow复合属性<br>flex-flow:row-reverse wrap; //相反 拆行</li>
-<li>flex-grow 扩展</li>
-</ul>
-<p>div:nth-of-type(1) {flex-grow: 1;}<br>div:nth-of-type(2) {flex-grow: 3;}<br>div:nth-of-type(3) {flex-grow: 1;}</p>
-<ul>
-<li>flex-shrink 收缩</li>
-</ul>
-<p>div:nth-of-type(2) {flex-shrink: 3;}</p>
-<ul>
-<li>flex-wrap 拆行</li>
-</ul>
-<p>flex-wrap: wrap;</p>
-<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><p><strong>1.原生js事件绑定和解除</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">// 事件绑定</div><div class="line">        this.bindHandler = (function() &#123;</div><div class="line">            if (window.addEventListener) &#123;// 标准浏览器</div><div class="line">                return function(elem, type, handler) &#123;// elem:节点    type:事件类型   handler:事件处理程序</div><div class="line">                    // 最后一个参数为true:在捕获阶段调用事件处理程序    为false:在冒泡阶段调用事件处理程序</div><div class="line">                    elem.addEventListener(type, handler, false);</div><div class="line">                &#125;</div><div class="line">            &#125; else if (window.attachEvent) &#123;// IE浏览器</div><div class="line">                return function(elem, type, handler) &#123;</div><div class="line">                    elem.attachEvent(&quot;on&quot; + type, handler);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;)();</div><div class="line"></div><div class="line">        // 事件解除</div><div class="line">        this.removeHandler = (function() &#123;</div><div class="line">            if (window.removeEventListerner) &#123;// 标准浏览器</div><div class="line">                return function(elem, type, handler) &#123;</div><div class="line">                    elem.removeEventListerner(type, handler, false);</div><div class="line"></div><div class="line">                &#125;</div><div class="line">            &#125; else if (window.detachEvent) &#123;// IE浏览器</div><div class="line">                return function(elem, type, handler) &#123;</div><div class="line">                    elem.detachEvent(&quot;on&quot; + type, handler);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;)();</div></pre></td></tr></table></figure>
-<p><strong>2. dom 创建 添加 查找 删除</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">createElement() //创建元素</div><div class="line"></div><div class="line">appendChild()</div><div class="line">removeChild()</div><div class="line">replaceChild()</div><div class="line">insertBefore()</div><div class="line"></div><div class="line">getElementsByTagName()</div><div class="line">getElementsByName()</div><div class="line">getElementById()</div></pre></td></tr></table></figure>
-<p><strong>3. 事件冒泡 事件捕获 阻止事件冒泡 默认事件的方式</strong></p>
-<p>冒泡：<br>事件会从最内层的元素开始发生，一直向上传播</p>
-<p>捕获：<br>事件会从最外层开始发生，直到最具体的元素</p>
-<p>阻止事件冒泡：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function stopBubble(e) &#123;</div><div class="line">      //如果提供了事件对象，则这是一个非IE浏览器</div><div class="line">      if ( e &amp;&amp; e.stopPropagation )</div><div class="line">          //因此它支持W3C的stopPropagation()方法</div><div class="line">          e.stopPropagation();</div><div class="line">      else</div><div class="line">          //否则，我们需要使用IE的方式来取消事件冒泡</div><div class="line">          window.event.cancelBubble = true;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//阻止浏览器的默认行为</div><div class="line">   function stopDefault( e ) &#123;</div><div class="line">       //阻止默认浏览器动作(W3C)</div><div class="line">       if ( e &amp;&amp; e.preventDefault )</div><div class="line">           e.preventDefault();</div><div class="line">       //IE中阻止函数器默认动作的方式</div><div class="line">       else</div><div class="line">           window.event.returnValue = false;</div><div class="line">       return false;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
-<p><strong>4. 什么是变量声明提升</strong></p>
-<p>就是把变量提升提到函数的top的地方</p>
-<p><strong>5.XMLHttpRequest 完整GET请求</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">//完整的GET请求</div><div class="line">var oAjax = new XMLHttpRequest();//创建Ajax对象</div><div class="line">oAjax.open(&quot;GET&quot;,&quot;create.php&quot;,true);//连接服务器</div><div class="line">oAjax.send();//发送请求</div><div class="line">//完整的POST发送请求</div><div class="line">var oAjax = new XMLHttpRequest();//创建</div><div class="line">oAjax.open(&quot;POST&quot;,&quot;create.php&quot;,true);//&quot;POST&quot;</div><div class="line">oAjax.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);//设置HTTP头信息.必须在open与send之间,否则出现异常.</div><div class="line">oAjax.send(&quot;name=陈二狗&amp;sex=男&quot;);//发送给服务器的内容</div></pre></td></tr></table></figure>
-<p><strong>6.跨域实现方式</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var windowObj = window; // 可以是其他的 Window 对象的引用</div><div class="line">var data = null;</div><div class="line"></div><div class="line">addEventListener(&apos;message&apos;, function(e)&#123;</div><div class="line">    if(e.origin == &apos;http://jasonkid.github.io/fezone&apos;) &#123;</div><div class="line">        data = e.data;</div><div class="line">        </div><div class="line">        e.source.postMessage(&apos;Got it!&apos;, &apos;*&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><strong>1. ES6新特性</strong></p>
-<ul>
-<li><p>解构， let&amp;const 字符串模板<br><strong>2. 模块化理解</strong><br>便于多人开发 大项目拆分 require.js<br><strong>3. 常用库及简介</strong></p>
-<p><a href="http://web.jobbole.com/84644/" target="_blank" rel="external">http://web.jobbole.com/84644/</a></p>
+        <p>主要针对IE8以下兼容性 积累<br>↖(^ω^)↗<br><a id="more"></a></p>
+<h3 id="rgba-兼容IE8"><a href="#rgba-兼容IE8" class="headerlink" title="rgba 兼容IE8"></a>rgba 兼容IE8</h3><p><a href="http://www.tuicool.com/articles/juiEFrb" target="_blank" rel="external">http://www.tuicool.com/articles/juiEFrb</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#66ffffff,endColorstr=#66ffffff);</div></pre></td></tr></table></figure>
+<p><img src="http://img2.tuicool.com/iEvEVr.png!web" alt="image"></p>
+<blockquote>
+<p>为便于复制 ( <em> ^ __ ^ </em> ) </p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>透明度</th>
+<th>IE filter值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td>19</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td>33</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td>4C</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td>66</td>
+</tr>
+<tr>
+<td>0.5</td>
+<td>7F</td>
+</tr>
+<tr>
+<td>0.6</td>
+<td>99</td>
+</tr>
+<tr>
+<td>0.7</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>0.8</td>
+<td>C8</td>
+</tr>
+<tr>
+<td>0.9</td>
+<td>E5</td>
+</tr>
+</tbody>
+</table>
+<h3 id="opacity-兼容ie8"><a href="#opacity-兼容ie8" class="headerlink" title="opacity 兼容ie8"></a>opacity 兼容ie8</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">filter: progid:DXImageTransform.Microsoft.Alpha(opacity=40);</div></pre></td></tr></table></figure>
+<h3 id="background-cover-兼容IE8"><a href="#background-cover-兼容IE8" class="headerlink" title="background-cover 兼容IE8"></a>background-cover 兼容IE8</h3><p>背景图两边模糊<br>background 加center 设背景颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">background: url(../img/bj.jpg) no-repeat #333c41 center;</div></pre></td></tr></table></figure>
+<h3 id="position-默认及兼容-8以下（不包括8）"><a href="#position-默认及兼容-8以下（不包括8）" class="headerlink" title="position 默认及兼容 8以下（不包括8）"></a>position 默认及兼容 8以下（不包括8）</h3><ul>
+<li>position 默认值 static</li>
+<li><p>position  inherit</p>
+<p><a href="http://w3help.org/zh-cn/causes/RA8001" target="_blank" rel="external">http://w3help.org/zh-cn/causes/RA8001</a></p>
 </li>
 </ul>
 
@@ -443,9 +446,13 @@
       
         <div class="post-tags">
           
-            <a href="/tags/前端/" rel="tag">#前端</a>
+            <a href="/tags/IE/" rel="tag">#IE</a>
           
-            <a href="/tags/面试/" rel="tag">#面试</a>
+            <a href="/tags/兼容/" rel="tag">#兼容</a>
+          
+            <a href="/tags/工作/" rel="tag">#工作</a>
+          
+            <a href="/tags/积累/" rel="tag">#积累</a>
           
         </div>
       
@@ -454,16 +461,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/30/hexo博客搭建-window环境/" rel="next" title="hexo博客搭建 window环境">
-                <i class="fa fa-chevron-left"></i> hexo博客搭建 window环境
+              <a href="/2016/10/13/前端面试题/" rel="next" title="前端面试题">
+                <i class="fa fa-chevron-left"></i> 前端面试题
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/14/IE兼容性-积累/" rel="prev" title="IE兼容性 积累">
-                IE兼容性 积累 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/14/keycode/" rel="prev" title="keycode">
+                keycode <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -490,8 +497,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/10/13/前端面试题/"
-           data-title="前端面试题" data-url="https://sunsmeil.github.io/2016/10/13/前端面试题/">
+      <div class="ds-thread" data-thread-key="2016/10/14/IE兼容性-积累/"
+           data-title="IE兼容性 积累" data-url="https://sunsmeil.github.io/2016/10/14/IE兼容性-积累/">
       </div>
     
   </div>
@@ -582,7 +589,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#HTML-amp-CSS"><span class="nav-number">1.</span> <span class="nav-text">HTML&CSS</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#JS"><span class="nav-number">2.</span> <span class="nav-text">JS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number"></span> <span class="nav-text">其他</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba-兼容IE8"><span class="nav-number">1.</span> <span class="nav-text">rgba 兼容IE8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#opacity-兼容ie8"><span class="nav-number">2.</span> <span class="nav-text">opacity 兼容ie8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#background-cover-兼容IE8"><span class="nav-number">3.</span> <span class="nav-text">background-cover 兼容IE8</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position-默认及兼容-8以下（不包括8）"><span class="nav-number">4.</span> <span class="nav-text">position 默认及兼容 8以下（不包括8）</span></a></li></ol></div>
             
           </div>
         </section>
